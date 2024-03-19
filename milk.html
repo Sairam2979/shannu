@@ -13,7 +13,7 @@
     color: rgb(255, 255, 255);
   }
   .container {
-    max-width: 600px;
+    max-width: 70%;
     margin: 50px auto;
     padding: 20px;
     background-color: #000000;
@@ -26,13 +26,14 @@
     margin-bottom: 10px;
   }
   input[type="number"] {
-    width: 80%;
+    width: calc(100% - 40px);
     padding: 10px;
     margin-bottom: 20px;
     border-radius: 4px;
     border: 2px solid #ffffff;
   }
   button, select {
+    width: 50%;
     padding: 10px 20px;
     border: none;
     background-color: blueviolet;
@@ -66,7 +67,7 @@
         <option value="yes">Yes</option>
         <option value="no">No</option>
       </select>
-      <button onclick="calculate()" style="margin-bottom: 12px;">Submit</button>
+      <button onclick="calculate()" style="margin: 15px 0;">Submit</button>
     </div>
 
     <div id="output" class="output" style="display: none;">
@@ -92,6 +93,7 @@
         var inputField = document.createElement("input");
         inputField.type = "number";
         inputField.placeholder = "Enter number " + (i + 1);
+        inputField.style.marginBottom = "10px";
         inputNumbers.push(inputField);
         resultDiv.appendChild(inputField);
       }
