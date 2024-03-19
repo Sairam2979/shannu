@@ -10,13 +10,13 @@
     margin: 0;
     padding: 0;
     background-color: #000000;
+    color: white;
   }
   .container {
-    max-width: 600px;
+    max-width: 100%;
     margin: 50px auto;
     padding: 20px;
     background-color: #000000;
-    color: white;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border: 4px solid #ffffff;
@@ -33,8 +33,10 @@
     border: 2px solid #ffffff;
   }
   button, select {
+    width: 50%;
     padding: 10px 20px;
     border: none;
+    text-align: center;
     background-color: blueviolet;
     color: #fff;
     border-radius: 4px;
@@ -50,13 +52,14 @@
   .output p {
     margin: 5px 0;
   }
+  
 </style>
 </head>
 <body>
   <div class="container">
     <div id="inputNumbers">
       <label for="numElements">Enter the number of elements (n):</label>
-      <input type="number" id="numElements">
+      <input type="number" id="numElements" placeholder="Enter number of elements">
       <button onclick="enterNumbers()">Submit</button>
     </div>
 
@@ -66,7 +69,7 @@
         <option value="yes">Yes</option>
         <option value="no">No</option>
       </select>
-      <button onclick="calculate()">Submit</button>
+      <button onclick="calculate()" style="margin-top: 10px;">Submit</button>
     </div>
 
     <div id="output" class="output" style="display: none;">
