@@ -13,13 +13,13 @@
     color: rgb(255, 255, 255);
   }
   .container {
-    max-width: 70%;
+    max-width: 40%;
     margin: 50px auto;
     padding: 20px;
     background-color: #000000;
-    border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border: 4px solid #ffffff;
+    border-radius: 16px;
   }
   label {
     display: block;
@@ -59,14 +59,14 @@
 <body>
   <div class="container">
     <div id="inputNumbers">
-      <label for="numElements">Enter the number of elements (n):</label>
+      <label for="numElements">Enter the number of Members (n):</label>
       <input type="number" id="numElements">
       <button onclick="enterNumbers()">Submit</button>
     </div>
 
     <div id="result" style="display: none;">
       <div id="is200PresentDiv">
-        <p id="question">Is 200 present?</p>
+        <p id="question">Is 200 notes present? Yes / No</p>
         <select id="is200Present">
           <option value="yes">Yes</option>
           <option value="no">No</option>
@@ -82,7 +82,7 @@
   </div>
 
   <script>
-    var inputNumbers = []; // Store the input numbers separately
+    var inputNumbers = [];
 
     function enterNumbers() {
       var numElements = parseInt(document.getElementById("numElements").value);
@@ -92,12 +92,12 @@
       var resultDiv = document.getElementById("result");
       resultDiv.style.display = "block";
 
-      inputNumbers = []; // Clear existing values from inputNumbers array
+      inputNumbers = []; 
 
       for (var i = 0; i < numElements; i++) {
         var inputField = document.createElement("input");
         inputField.type = "number";
-        inputField.placeholder = "Enter number " + (i + 1);
+        inputField.placeholder = "Enter " + (i + 1) +"'s amount";
         inputField.style.marginBottom = "10px";
         inputNumbers.push(inputField);
         resultDiv.insertBefore(inputField, resultDiv.childNodes[resultDiv.childNodes.length - 2]);
