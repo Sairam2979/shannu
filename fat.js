@@ -34,5 +34,7 @@ function calculateAverageFat() {
     }
 
     const averageFat = totalVolume > 0 ? (totalFat / totalVolume) * 100 : 0;
-    document.getElementById('result').textContent = `The average fat percentage is: ${averageFat.toFixed(2)}%`;
+    document.getElementById('result').innerHTML = 
+        `Total Volume of Milk: ${totalVolume.toFixed(1)} liters<br>` +
+        `Average Fat Percentage: ${averageFat.toFixed(1)}%`;
 }
